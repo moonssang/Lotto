@@ -13,7 +13,15 @@ class ResultActivity : AppCompatActivity() {
 
         val result_sorted = result?.sorted()
 
+       // result?.Let{
+        //  updateLottoBallImages(result.sortedBy { it })
+       // }
+        updateLottoBallImages(result_sorted)
 
+
+    }
+
+    private fun updateLottoBallImages(result_sorted : List<Int>) {
         val lottoBallImagesStartId = R.drawable.ball_01 //146
         //val lottoBallImagestId2 = R.drawable.ball_02
         //val lottoBallImagestId3 = R.drawable.ball_03
@@ -25,7 +33,7 @@ class ResultActivity : AppCompatActivity() {
         val imageview7 = findViewById<ImageView>(R.id.imageView7)
         val imageview8 = findViewById<ImageView>(R.id.imageView8)
 
-        imageview3.setImageResource(lottoBallImagesStartId + result_sorted!![0] -1)
+        imageview3.setImageResource(lottoBallImagesStartId + result_sorted[0] -1)
         imageview4.setImageResource(lottoBallImagesStartId + result_sorted[1] -1)
         imageview5.setImageResource(lottoBallImagesStartId + result_sorted[2] -1)
         imageview6.setImageResource(lottoBallImagesStartId + result_sorted[3] -1)
