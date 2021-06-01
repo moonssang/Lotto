@@ -1,8 +1,13 @@
-package com.smuexample.lotto
+import com.smuexample.lotto.R
+
+//ij8package com.smuexample.lotto
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.TextView
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -10,13 +15,16 @@ class ResultActivity : AppCompatActivity() {
         setContentView(R.layout.activity_result)
 
         val result = intent.getIntArrayExtra("result") ?: return
+        val strConstellation = intent.getStringExtra("constellation")
 
         val result_sorted = result?.sorted()
 
-       // result?.Let{
-        //  updateLottoBallImages(result.sortedBy { it })
-       // }
-        updateLottoBallImages(result_sorted)
+        strConstellation?.let{
+            val resultLabel = findViewById<TextView>(R.id.resultLabel)
+            resultLabel.text = "${strConstellation}의 ${SimpleDateFormat("yyyy년 MM월 dd일").format(Date())} 로또번호입니다"
+          updateLottoBallImages(result.sortedBy { it })
+        }
+        //updateLottoBallImages(result_sorted)
 
 
     }
