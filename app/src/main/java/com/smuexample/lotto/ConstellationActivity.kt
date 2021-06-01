@@ -60,10 +60,7 @@ class ConstellationActivity : AppCompatActivity() {
             intent.putExtra("constellation",makeConstellationString
                 (datePicker.month,datePicker.dayOfMonth))
             startActivity(intent)
-
         }
-
-
     }
 
     private fun makeConstellationString(month: Int, day: Int): String {

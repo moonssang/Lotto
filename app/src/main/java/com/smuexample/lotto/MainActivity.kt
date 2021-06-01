@@ -1,5 +1,6 @@
 package com.smuexample.lotto
 
+import ResultActivity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
